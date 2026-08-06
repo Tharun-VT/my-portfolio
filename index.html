@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V Tharun — Software Engineer</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="V Tharun — Software Engineer in Bengaluru building production applications with Java, Spring Boot, React, React Native and PostgreSQL. Experienced in scalable REST APIs, real-time IoT systems and authentication."
+    />
+    <meta
+      name="keywords"
+      content="V Tharun, Software Engineer, Backend Developer, Full-Stack Developer, Spring Boot, React, React Native, Bengaluru"
+    />
+    <meta name="author" content="V Tharun" />
+    <meta name="theme-color" content="#060a13" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="V Tharun — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Software Engineer building scalable backend systems, real-time IoT platforms and full-stack applications."
+    />
+    <meta property="og:url" content="https://tharun-vt.github.io/my-portfolio/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="V Tharun — Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Software Engineer building scalable backend systems, real-time IoT platforms and full-stack applications."
+    />
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+    <!-- Apply persisted theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.remove('dark')
+          document.documentElement.classList.add('light')
+        }
+      } catch (_) {}
+    </script>
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+@import 'tailwindcss';
+
+/* Dark is the default theme (html.dark); html.light flips the tokens below. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Design tokens. Components only ever reference the semantic Tailwind colors
+ * (bg, surface, line, text, muted, accent…) so both themes stay in sync.
+ */
+:root,
+html.dark {
+  --bg: #060a13;
+  --bg-soft: #0a101d;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-strong: rgba(255, 255, 255, 0.07);
+  --line: rgba(255, 255, 255, 0.09);
+  --text-primary: #e8edf6;
+  --text-muted: #96a3b8;
+  --text-faint: #64748b;
+  --accent: #818cf8;
+  --accent-2: #22d3ee;
+  --accent-solid: #6366f1;
+  --glow-1: rgba(99, 102, 241, 0.16);
+  --glow-2: rgba(34, 211, 238, 0.1);
+}
+
+html.light {
+  --bg: #f7f9fc;
+  --bg-soft: #eef2f8;
+  --surface: rgba(255, 255, 255, 0.75);
+  --surface-strong: #ffffff;
+  --line: rgba(15, 23, 42, 0.1);
+  --text-primary: #0f172a;
+  --text-muted: #47566c;
+  --text-faint: #64748b;
+  --accent: #4f46e5;
+  --accent-2: #0891b2;
+  --accent-solid: #4f46e5;
+  --glow-1: rgba(79, 70, 229, 0.12);
+  --glow-2: rgba(8, 145, 178, 0.08);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-line: var(--line);
+  --color-text: var(--text-primary);
+  --color-muted: var(--text-muted);
+  --color-faint: var(--text-faint);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-solid: var(--accent-solid);
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg font-sans text-text antialiased;
+  overflow-x: hidden;
+}
+
+/* Anchored sections stop below the sticky navbar */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+::selection {
+  background: var(--accent-solid);
+  color: #fff;
+}
+
+/* Slim, theme-aware scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
+
+/* Shared utility classes */
+@utility glass {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@utility gradient-text {
+  background: linear-gradient(100deg, var(--accent), var(--accent-2));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
