@@ -36,8 +36,9 @@ export interface Project {
   tech: string[]
   categories: ProjectCategory[]
   icon: LucideIcon
-  github: string
-  demo: string
+  /** Omitted → the corresponding button is hidden until a real URL is added. */
+  github?: string
+  demo?: string
 }
 
 export interface Certification {

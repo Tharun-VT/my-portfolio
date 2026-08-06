@@ -197,8 +197,6 @@ export const PROJECTS: Project[] = [
     tech: ['React Native', 'React', 'TypeScript', 'Spring Boot', 'JWT', 'WebSocket', 'TimescaleDB', 'Redis'],
     categories: ['Full-Stack', 'Mobile'],
     icon: BatteryCharging,
-    github: '#',
-    demo: '#',
   },
   {
     title: 'FloralNest',
@@ -212,8 +210,6 @@ export const PROJECTS: Project[] = [
     tech: ['Shopify', 'JavaScript', 'Payments', 'Webhooks'],
     categories: ['E-Commerce', 'Mobile'],
     icon: Flower2,
-    github: '#',
-    demo: '#',
   },
   {
     title: 'Grid Stability Prediction',
@@ -227,8 +223,6 @@ export const PROJECTS: Project[] = [
     tech: ['Python', 'Machine Learning', 'Pandas', 'Scikit-learn'],
     categories: ['Machine Learning'],
     icon: Zap,
-    github: '#',
-    demo: '#',
   },
 ]
 

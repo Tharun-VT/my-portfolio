@@ -59,26 +59,32 @@ function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <div className="mt-auto flex items-center gap-3 pt-6">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm text-muted transition-colors duration-200 hover:border-accent/50 hover:text-text"
-          >
-            <Github size={15} />
-            GitHub
-          </a>
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm text-muted transition-colors duration-200 hover:border-accent/50 hover:text-text"
-          >
-            <ExternalLink size={15} />
-            Live Demo
-          </a>
-        </div>
+        {(project.github || project.demo) && (
+          <div className="mt-auto flex items-center gap-3 pt-6">
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm text-muted transition-colors duration-200 hover:border-accent/50 hover:text-text"
+              >
+                <Github size={15} />
+                GitHub
+              </a>
+            )}
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm text-muted transition-colors duration-200 hover:border-accent/50 hover:text-text"
+              >
+                <ExternalLink size={15} />
+                Live Demo
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </motion.article>
   )
