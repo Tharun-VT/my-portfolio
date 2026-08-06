@@ -50,8 +50,12 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
 
         {project.links && project.links.length > 0 && (
-          <div className="mt-auto flex flex-wrap items-center gap-2 pt-4">
-            {project.links.map(({ label, href, icon: LinkIcon }) => (
+          <div className="mt-auto pt-4">
+            <p className="mb-2 font-mono text-[10px] font-medium tracking-widest text-faint uppercase">
+              Live
+            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              {project.links.map(({ label, href, icon: LinkIcon }) => (
               <a
                 key={label}
                 href={href}
@@ -62,7 +66,8 @@ function ProjectCard({ project }: { project: Project }) {
                 <LinkIcon size={13} />
                 {label}
               </a>
-            ))}
+              ))}
+            </div>
           </div>
         )}
       </div>
