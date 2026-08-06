@@ -39,7 +39,17 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <p className="glass mb-6 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm text-muted">
+          <div className="mb-6 inline-block rounded-full bg-gradient-to-br from-accent to-accent-2 p-1 shadow-xl shadow-accent-solid/20">
+            <img
+              src={asset(PROFILE.photo)}
+              alt={`Portrait of ${PROFILE.name}`}
+              width={128}
+              height={128}
+              className="h-28 w-28 rounded-full border-4 border-bg object-cover sm:h-32 sm:w-32"
+            />
+          </div>
+
+          <p className="glass mb-6 flex w-fit items-center gap-2 rounded-full px-4 py-1.5 text-sm text-muted">
             <MapPin size={14} className="text-accent" />
             {PROFILE.location}
           </p>

@@ -38,6 +38,7 @@ export const PROFILE = {
   github: 'https://github.com/dev-tharun-v',
   linkedin: 'https://linkedin.com/in/v-tharun-6b49ab2b2',
   resumeFile: 'V_Tharun_Resume.pdf',
+  photo: 'profile.webp',
   tagline:
     'I build production-grade backend systems and full-stack applications — from real-time IoT battery telemetry platforms to mobile apps and admin dashboards.',
   summary: [
