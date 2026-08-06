@@ -1,4 +1,5 @@
 import {
+  Apple,
   Award,
   BatteryCharging,
   Code2,
@@ -8,9 +9,11 @@ import {
   Github,
   GraduationCap,
   Layers,
+  LayoutDashboard,
   Linkedin,
   Mail,
   Server,
+  Smartphone,
   Wrench,
   Zap,
 } from 'lucide-react'
@@ -198,6 +201,23 @@ export const PROJECTS: Project[] = [
     tech: ['React Native', 'React', 'TypeScript', 'Spring Boot', 'JWT', 'WebSocket', 'TimescaleDB', 'Redis'],
     categories: ['Full-Stack', 'Mobile'],
     icon: BatteryCharging,
+    links: [
+      {
+        label: 'Admin Dashboard',
+        href: 'https://intelligence.turnobattery.com',
+        icon: LayoutDashboard,
+      },
+      {
+        label: 'Android APK',
+        href: 'https://mobile-app.turnobattery.com/volt-0.1.3-build.apk',
+        icon: Smartphone,
+      },
+      {
+        label: 'iOS TestFlight',
+        href: 'https://testflight.apple.com/join/NyCDpna3',
+        icon: Apple,
+      },
+    ],
   },
   {
     title: 'FloralNest',

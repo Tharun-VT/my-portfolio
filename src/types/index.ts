@@ -29,6 +29,12 @@ export interface Experience {
 
 export type ProjectCategory = 'Full-Stack' | 'Mobile' | 'E-Commerce' | 'Machine Learning'
 
+export interface ProjectLink {
+  label: string
+  href: string
+  icon: LucideIcon
+}
+
 export interface Project {
   title: string
   description: string
@@ -36,9 +42,8 @@ export interface Project {
   tech: string[]
   categories: ProjectCategory[]
   icon: LucideIcon
-  /** Omitted → the corresponding button is hidden until a real URL is added. */
-  github?: string
-  demo?: string
+  /** Omitted or empty → no link buttons are shown on the card. */
+  links?: ProjectLink[]
 }
 
 export interface Certification {

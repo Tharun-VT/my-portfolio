@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { ExternalLink, Github } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { PROJECTS, PROJECT_FILTERS } from '../../data/resume'
 import type { Project } from '../../types'
@@ -59,30 +58,20 @@ function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        {(project.github || project.demo) && (
-          <div className="mt-auto flex items-center gap-3 pt-6">
-            {project.github && (
+        {project.links && project.links.length > 0 && (
+          <div className="mt-auto flex flex-wrap items-center gap-2.5 pt-6">
+            {project.links.map(({ label, href, icon: LinkIcon }) => (
               <a
-                href={project.github}
+                key={label}
+                href={href}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm text-muted transition-colors duration-200 hover:border-accent/50 hover:text-text"
               >
-                <Github size={15} />
-                GitHub
+                <LinkIcon size={15} />
+                {label}
               </a>
-            )}
-            {project.demo && (
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm text-muted transition-colors duration-200 hover:border-accent/50 hover:text-text"
-              >
-                <ExternalLink size={15} />
-                Live Demo
-              </a>
-            )}
+            ))}
           </div>
         )}
       </div>
